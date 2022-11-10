@@ -1,6 +1,6 @@
 import axios from "axios";
-import { _KEYMOVIES } from "./env";
 
 const instance = axios.create({
-  baseURL: "https://developers.themoviedb.org/3",
+  baseURL:
+    "https://api.themoviedb.org/3/genre/movie/list?api_key=${_KEYMOVIES}&language=en-US",
 });

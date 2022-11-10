@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Banner.module.css";
+import requests from "../Requests";
+
 const Banner = () => {
   function counterLetter(string, count) {
     return string.length > count ? string.substr(0, count - 1) + "..." : string;
