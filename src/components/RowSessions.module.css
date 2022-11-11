@@ -1,0 +1,28 @@
+.row {
+  color: white;
+  margin-left: 1.25rem;
+}
+.title {
+  margin-left: 1.25rem;
+}
+.wrap {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 1rem;
+}
+
+.rowLarge,
+.rowPoster {
+  max-height: 10rem;
+  object-fit: contain;
+  margin-right: 10px;
+  width: 100%;
+  transition: 450ms;
+}
+.rowLarge {
+  /* max-height: 12rem; */
+}
+.wrap::-webkit-scrollbar {
+  display: none;
+}
