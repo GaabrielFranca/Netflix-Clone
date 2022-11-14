@@ -3,7 +3,7 @@ import styles from "./LoginScreen.module.css";
 import LoginUp from "./LoginUp";
 import LoginIn from "./LoginUp";
 const LoginScreen = () => {
-  const [signIn, setSignIn] = React.useState(false);
+  const [signIn, setSignIn] = React.useState(null);
 
   return (
     <div className={styles.loginScreen}>

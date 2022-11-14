@@ -1,13 +1,16 @@
 import React from "react";
 import styles from "./LoginUp.module.css";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth, db } from "../firebase.js";
 import { useRef } from "react";
 const LoginUp = () => {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const register = () => {
+  const register = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(
       auth,
@@ -17,7 +20,6 @@ const LoginUp = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        console.log(user);
         // ...
       })
       .catch((error) => {
@@ -26,12 +28,25 @@ const LoginUp = () => {
         // ..
       });
   };
-
-  const signupScreen = (e) => {
+  const signInScreen = (e) => {
     e.preventDefault();
+    signInWithEmailAndPassword(
+      auth,
+      emailRef.current.value,
+      passwordRef.current.value
+    )
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage);
+      });
   };
 
-  const signInScreen = (e) => {};
+  const signupScreen = () => {};
 
   return (
     <div className={styles.siginUp}>
@@ -45,7 +60,7 @@ const LoginUp = () => {
       </form>
       <div className={styles.upScreenText}>
         <span className={styles.gray}>New to netflix?</span>
-        <p onClick={signupScreen}>Sign Up now</p>
+        <p onClick={register}>Sign Up now</p>
       </div>
     </div>
   );
