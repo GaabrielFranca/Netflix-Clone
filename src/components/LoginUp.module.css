@@ -34,7 +34,11 @@
   color: white;
   cursor: pointer;
 }
-.upLink {
+.upScreenText {
+  display: flex;
+  gap: 5px;
+}
+.upScreenText > p:hover {
   text-decoration: underline;
   cursor: pointer;
 }

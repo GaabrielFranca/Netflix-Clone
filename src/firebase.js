@@ -1,3 +1,6 @@
+import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_KEY_FIREBASE,
   authDomain: "netflix-build-clone-acd10.firebaseapp.com",
@@ -7,3 +10,7 @@ const firebaseConfig = {
   appId: "1:1009456186537:web:258e3ac67dea0bb2e715b8",
 };
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+export const auth = getAuth(app);
+
+export default db;
