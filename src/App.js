@@ -10,7 +10,6 @@ import { auth } from "./firebase.js";
 function App() {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
   React.useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {
       if (userAuth) {
