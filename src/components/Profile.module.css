@@ -1,0 +1,56 @@
+.Profile {
+  color: white;
+  height: 100vh;
+}
+.profileBody {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  padding-top: 8%;
+  max-width: 50rem;
+}
+.profileBody > h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  border-bottom: 1px solid gray;
+  margin-bottom: 1rem;
+}
+.ProfileInfo {
+  display: flex;
+}
+.ProfileInfo > img {
+  max-width: 100px;
+  height: 100px;
+}
+.profileDetails {
+  flex: 1;
+  color: white;
+  margin-left: 25px;
+}
+.profileDetails > h2 {
+  background: gray;
+  padding: 1rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+.profilePlans > button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: 5%;
+  color: #fff;
+  background: #e50914;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.profilePlans {
+  margin-top: 20px;
+}
+.profilePlans > h2 {
+  color: #fff;
+  border-bottom: 1px solid #282c2d;
+  padding-bottom: 10px;
+}

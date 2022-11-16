@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomeScreen from "./components/HomeScreen";
 import LoginScreen from "./components/LoginScreen";
+import Profile from "./components/Profile";
 import { logout, login, selectUser } from "./features/user/userSlice";
 import { auth } from "./firebase.js";
 
@@ -20,12 +21,12 @@ function App() {
           })
         );
       } else {
-        dispatch(logout);
+        dispatch(logout());
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
@@ -36,6 +37,7 @@ function App() {
           <div className="App">
             <Routes>
               <Route exact path="/" element={<HomeScreen />}></Route>
+              <Route exact path="/profile" element={<Profile />}></Route>
             </Routes>
           </div>
         </BrowserRouter>
